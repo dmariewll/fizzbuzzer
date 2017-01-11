@@ -1,22 +1,23 @@
 class Fizzbuzzer
 
-  def initialize(r)
-    @range = 1 .. r
+  def initialize(i)
+    @iteration = i
   end
 
-  def run(i)
-
+  def run(r)
+    @range = 1 .. r
     @range.each do |n|
-      if n % i == 0
+      if n % @iteration == 0
         puts "Fizz"
       else
         puts n
       end
     end
-  end
 
+  end
 end
 
-f = Fizzbuzzer.new 14
 
-f.run 4
+f = Fizzbuzzer.new 4
+
+f.run 14
